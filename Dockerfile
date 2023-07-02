@@ -1,0 +1,21 @@
+# Dockerfile for hello-ooba.js
+
+FROM node:18
+
+ARG OOBA_API_IP
+ARG HOST_OPENAI_API_PORT
+ARG CONTAINER_HELLOWORLD_PORT
+
+ENV OOBA_API_IP=$OOBA_API_IP
+ENV HOST_OPENAI_API_PORT=$HOST_OPENAI_API_PORT
+ENV CONTAINER_HELLOWORLD_PORT=$CONTAINER_HELLOWORLD_PORT
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY hello-ooba.js ./
+
+CMD [ "node", "hello-ooba.js" ]

@@ -1,0 +1,43 @@
+version: "3.3"
+services:
+  ooba-hello-service:
+    container_name: ooba-hello-service
+    build:
+      context: .
+      args:
+        OOBA_API_IP: ${OOBA_API_IP}
+        HOST_OPENAI_API_PORT: ${HOST_OOBA_PORT}
+        CONTAINER_HELLOWORLD_PORT: ${CONTAINER_HELLOWORLD_PORT}
+    ports:
+      - "127.0.0.1:${HOST_HELLOWORLD_PORT}:${CONTAINER_HELLOWORLD_PORT}"
+  ooba-service:
+    container_name: ooba-service
+    build:
+      context: https://github.com/oobabooga/text-generation-webui.git
+      dockerfile: docker/Dockerfile
+      args:
+        # specify which cuda version your card supports: https://developer.nvidia.com/cuda-gpus
+        TORCH_CUDA_ARCH_LIST: ${TORCH_CUDA_ARCH_LIST}
+        WEBUI_VERSION: ${WEBUI_VERSION}
+    env_file: .env
+    ports:
+      - "127.0.0.1:${HOST_PORT}:${CONTAINER_PORT}"
+      - "127.0.0.1:${HOST_OOBA_PORT}:${CONTAINER_OPENAI_API_PORT}"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./ooba_data/characters:/app/characters
+      - ./ooba_data/extensions:/app/extensions
+      - ./ooba_data/loras:/app/loras
+      - ./ooba_data/models:/app/models
+      - ./ooba_data/presets:/app/presets
+      - ./ooba_data/prompts:/app/prompts
+      - ./ooba_data/softprompts:/app/softprompts
+      - ./ooba_data/training:/app/training
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]
