@@ -1,5 +1,8 @@
 # Hello-Ooba - Oobabooga "Hello World" API example for node.js with Express
 
+![Screenshot](https://github.com/bashalarmist/hello-ooba/master/hello-ooba.jpg)
+
+
 ## Introduction
 This is intended for users that want to develop with the Oobabooga OpenAI API locally, for example, to develop a bot that can connect to another service. I have provided this code as a starting point.
 
@@ -34,3 +37,8 @@ TBD...
 - [Hugging Face](https://huggingface.co) - The main place to download more LLMs
 - [LocalLLaMA Subreddit](https://www.reddit.com/r/LocalLLaMA/) - A subreddit for LLM related discussion
 
+## Contribute
+Code contributions are welcome, as well as bitcoin donations:
+bc1qnpvc8yp7tprewaam4v64ga8v0rhnyt67532tk5
+
+![Bitcoin](https://i.imgur.com/Ixe1at6.jpg)
