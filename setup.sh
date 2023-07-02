@@ -4,20 +4,6 @@ BASE_DIR=$(pwd)
 TMP_DIR="${BASE_DIR}/tmp"
 OOBA_DATA_DIR="${BASE_DIR}/ooba_data"
 
-setup_env() {
-    echo "Copying the .env.example file to .env"
-    
-    # Check if the .env file already exists
-    if [ -f "${BASE_DIR}/.env" ]; then
-        # If it does, print an error message and exit
-        echo "ERROR: .env file already exists. Please delete it before running this script."
-        exit 1
-    else
-        # If it doesn't, copy the .env.example file to .env
-        cp "${BASE_DIR}/.env.example" "${BASE_DIR}/.env"
-    fi
-}
-
 create_directories() {
     echo "Creating tmp and ooba_data directories at ${BASE_DIR}." 
     
@@ -139,7 +125,6 @@ download_model() {
     fi
 }
 
-setup_env
 create_directories
 clone_git_repo
 move_files

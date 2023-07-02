@@ -24,7 +24,7 @@ Here is the OpenAI API documentation. It will contain helpful information.
 ## Usage
 1. Copy the .env.example to .env `cp .env.example .env`
 2. Set a compatible TORCH_CUDA_ARCH_LIST. See [CUDA GPUs](https://developer.nvidia.com/cuda-gpus)
-3. Download a model and place it in the ooba_data/models directory. `mkdir ./ooba_data/models` I used [TheBloke Wizard-Vicuna-13B-Uncensored-GPTQ](https://huggingface.co/TheBloke/Wizard-Vicuna-13B-Uncensored-GPTQ). You will need all of the files, place them into ./ooba_data/models/TheBloke_wizard-vicuna-13B-GPTQ/
+3. Run setup.sh
 4. From the repository root directory, run `docker compose up --build` (this will take sometime the first run)
 5. You should be up and running. Test with `curl -X POST -H "Content-Type: application/json" -d '{"message":"Hello Ooba bot!"}' http://localhost:3001/prompt`
 
