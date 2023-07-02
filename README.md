@@ -1,6 +1,6 @@
 # Hello-Ooba - Oobabooga "Hello World" API example for node.js with Express
 
-![Screenshot](https://github.com/bashalarmist/hello-ooba/master/hello-ooba.jpg)
+![Screenshot](https://github.com/bashalarmist/hello-ooba/blob/master/readme/hello-ooba.png)
 
 
 ## Introduction
