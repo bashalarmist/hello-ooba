@@ -13,7 +13,7 @@ This is intended for users that want to develop with the Oobabooga OpenAI API lo
 ## Hardware requirements
 - 3080ti or better NVIDA GPU with 12GB memory or more
 
-I have an Nvida graphics card, so this is created to work on that graphics card. You can get this to run with just your CPU, and probably an AMD graphics card, but you'll need to experiment with the settings. If you try this and you are successful, provide them to me I can add it to the documentation.
+I have an Nvida graphics card, so this is created to work on that graphics card. You can get this to run with just your CPU, and probably an AMD graphics card, but you'll need to experiment with the settings. If you try this and you are successful, provide the configs you used and I will add them to the documentation.
 
 ## API Info
 We are using the OpenAI implementation of the API endpoint.
